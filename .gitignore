@@ -1,0 +1,11 @@
+.codelite/*
+.vscode/*
+Makefile
+parcours.workspace
+compile_flags.txt
+*.mk
+*.project
+*.exe
+*.bin
+**/Debug/*
+*.txt

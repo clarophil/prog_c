@@ -1,0 +1,86 @@
+<h3>Etape 1 :&nbsp; Installer Visual Code</h3>
+<p><strong>Visual Code</strong> est<span class="st"> un &eacute;diteur de code d&eacute;velopp&eacute; par Microsoft pour Windows, Linux et macOS.&nbsp; Il permet le d&eacute;veloppement dans de nombreux langages ; python, java, C, ...</span></p>
+<p><span class="st">Cet &eacute;diteur est open source et gratuit d'utilisation &agrave; ne pas confondre avec Visual Studio qui est plus complexe d'utilisation.</span></p>
+<p><span class="st">Vous pouvez le t&eacute;l&eacute;charger sur cette page </span><a title="Visual Code" href="https://code.visualstudio.com/download" target="_blank" rel="noopener">https://code.visualstudio.com/download</a></p>
+<div>
+<h3>Etape 2 : Installer l'extension Microsoft C/C++ extension</h3>
+<ol>
+<li>Ouvrir Visual Code</li>
+<li>Cliquer sur l'ic&ocirc;ne Extensions dans la barre de menu &agrave; gauche</li>
+<li>Recherche c++</li>
+<li>Cliquer sur Installer</li>
+</ol>
+</div>
+<h3>Etape 3 : Associer le compilateur &agrave; Visual Code</h3>
+<ol>
+<li>Ouvez Visual Code</li>
+<li>Dans le menu <em>Terminal</em>, cliquer sur <em>Configure Default Build Task</em>
+<ol>
+<li>S&eacute;lectionner<em> C/C++:clang build active file</em> -&gt; le fichier tasks.json est cr&eacute;&eacute; avec la bonne configuration</li>
+</ol>
+</li>
+</ol>
+<h3>Etape 4 : Compiler votre script</h3>
+<ol>
+<li>Dans le menu Terminal, cliquer sur Run task</li>
+<li>S&eacute;lectionner <em>C/C++: clang build active file</em>
+<ol>
+<li>Le terminal s'ouvre et un message de compilation s'affiche</li>
+<li>L'ex&eacute;cutable appara&icirc;t sur la gauche dans l'explorateur</li>
+</ol>
+</li>
+</ol>
+<h3>Etape 5 : Lancer l'ex&eacute;cutable</h3>
+<ol>
+<li>Ouvrir un terminal Mac</li>
+<li>Aller dans le dossier qui contient l'ex&eacute;cutable</li>
+<li>Lancer l'ex&eacute;cutable en le pr&eacute;c&eacute;dant de ./
+<ol>
+<li>exemple ./hello</li>
+</ol>
+</li>
+</ol>
+<h3>Etape 6 : Langer l'ex&eacute;cutable &agrave; partir du terminal Visual Code</h3>
+<ol>
+<li>Ecraser le contenu task.json qui est dans le dossier .vscode par</li>
+</ol>
+<div style="color: #000000; background-color: #ffffff; font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; white-space: pre;">
+<div><span style="color: #000000;">{</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"version"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"2.0.0"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"tasks"</span><span style="color: #000000;">:&nbsp;[</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"label"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"Open&nbsp;Terminal"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"type"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"shell"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"command"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"osascript&nbsp;-e&nbsp;'tell&nbsp;application&nbsp;</span><span style="color: #ee0000;">\"</span><span style="color: #a31515;">Terminal</span><span style="color: #ee0000;">\"\n</span><span style="color: #a31515;">do&nbsp;script&nbsp;</span><span style="color: #ee0000;">\"</span><span style="color: #a31515;">echo&nbsp;hello</span><span style="color: #ee0000;">\"\n</span><span style="color: #a31515;">end&nbsp;tell'"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"problemMatcher"</span><span style="color: #000000;">:&nbsp;[]</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"type"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"shell"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"label"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"C/C++:&nbsp;clang&nbsp;build&nbsp;active&nbsp;file"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"command"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"/usr/bin/clang"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"args"</span><span style="color: #000000;">:&nbsp;[</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #a31515;">"-g"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #a31515;">"${file}"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #a31515;">"-o"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #a31515;">"${fileDirname}/${fileBasenameNoExtension}"</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"options"</span><span style="color: #000000;">:&nbsp;{</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"cwd"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"${workspaceFolder}"</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"problemMatcher"</span><span style="color: #000000;">:&nbsp;[</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #a31515;">"$gcc"</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"group"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"build"</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"type"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"shell"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"label"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"C/C++:&nbsp;gclang&nbsp;build&nbsp;and&nbsp;run&nbsp;active&nbsp;file"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"command"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"${fileDirname}/${fileBasenameNoExtension}"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"problemMatcher"</span><span style="color: #000000;">:&nbsp;[],</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"dependsOn"</span><span style="color: #000000;">:&nbsp;[</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #a31515;">"C/C++:&nbsp;clang&nbsp;build&nbsp;active&nbsp;file"</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;]</span></div>
+<div><span style="color: #000000;">}</span></div>
+</div>

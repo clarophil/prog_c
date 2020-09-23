@@ -1,0 +1,84 @@
+<h3>Etape 1 :&nbsp; Installer Visual Code</h3>
+<p><strong>Visual Code</strong> est<span class="st"> un &eacute;diteur de code d&eacute;velopp&eacute; par Microsoft pour Windows, Linux et macOS.&nbsp; Il permet le d&eacute;veloppement dans de nombreux langages ; python, java, C, ...</span></p>
+<p><span class="st">Cet &eacute;diteur est open source et gratuit d'utilisation &agrave; ne pas confondre avec Visual Studio qui est plus complexe d'utilisation.</span></p>
+<p><span class="st">Vous pouvez le t&eacute;l&eacute;charger sur cette page </span><a title="Visual Code" href="https://code.visualstudio.com/download" target="_blank" rel="noopener">https://code.visualstudio.com/download</a></p>
+<h3>Etape 2: Installer le compilateur et le debugger</h3>
+<p>Il existe de nombreux compilateurs et de nombreuses installations possibles, en voici une :</p>
+<ol>
+<li>Ouvrez la page <a title="compilateur" href="https://code.visualstudio.com/docs/languages/cpp" target="_blank" rel="noopener">https://code.visualstudio.com/docs/languages/cpp</a></li>
+<li>S&eacute;lectionner un compilateur en fonction de votre syst&egrave;me d'exploitation
+<ol>
+<li>Pour Windows <a title="minGw" href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe/download" target="_blank" rel="noopener">https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe/download</a></li>
+</ol>
+</li>
+<li>T&eacute;l&eacute;charger et installer le compilateur
+<ol>
+<li>Lancer&nbsp; l'installation <strong>en tant qu'administrateur</strong></li>
+<li>Quand&nbsp; tous les paquets sont install&eacute;s, fermer la fen&ecirc;tre</li>
+</ol>
+</li>
+<li>Pour v&eacute;rifier que tout est en ordre, ouvrez une fen&ecirc;tre de commande
+<ol>
+<li>tapez <em>gcc --version</em></li>
+<li>taper<em> gdb --version</em></li>
+</ol>
+</li>
+</ol>
+<h3>Etape 3 : Configurer le compilateur pour Windows</h3>
+<ol>
+<li>Rechercher le chemin du compilateur dans votre explorateur et copier le chemin de la barre d'adresse</li>
+<li>Dans la barre de recherche de Windows, taper environnement et s&eacute;lectionner <em>Modifier les variables d'environnement syst&egrave;me</em></li>
+<li>Cliquer sur le bouton <em>Variables d'environnement</em> dans le base de la fen&ecirc;tre</li>
+<li>Cliquer sur <em>Path</em> puis le bouton <em>Modifier</em></li>
+<li>V&eacute;rifier que e chemin du compilateur est pr&eacute;sent sinon cliquer sur <em>Nouveau</em> et coller le chemin</li>
+<li>Cliquer sur Ok dans toutes les fen&ecirc;tre pour valider</li>
+</ol>
+<div>
+<h3>Etape 4 : Installer l'extension Microsoft C/C++ extension</h3>
+<ol>
+<li>Ouvrir Visual Code</li>
+<li>Cliquer sur l'ic&ocirc;ne Extensions dans la barre de menu &agrave; gauche</li>
+<li>Recherche c++</li>
+<li>Cliquer sur Installer</li>
+</ol>
+</div>
+<h3>Etape 4 : Associer le compilateur &agrave; Visual Code</h3>
+<ol>
+<li>Ouvez Visual Code</li>
+<li>Dans le menu <em>Terminal</em>, cliquer sur <em>Configure Default Build Task</em>
+<ol>
+<li>S&eacute;lectionner<em> C/C++:gcc.exe build active file</em> -&gt; le fichier tasks.json est cr&eacute;&eacute; avec la bonne configuration</li>
+</ol>
+</li>
+</ol>
+<h3>Etape 5 : Compiler votre script</h3>
+<ol>
+<li>Dans le menu Terminal, cliquer sur Run task</li>
+<li>S&eacute;lectionner <em>C/C++:gcc.exe build active file</em>
+<ol>
+<li>Une fen&ecirc;tre de commande s'ouvre et un message de compilation s'affiche</li>
+<li>L'ex&eacute;cutable appara&icirc;t sur la gauche dans l'explorateur</li>
+</ol>
+</li>
+</ol>
+<h3>Etape 6 : Lancer l'ex&eacute;cutable</h3>
+<p>&nbsp;</p>
+<h3>Etape en option : Ajouter une t&acirc;che pour lancer l'ex&eacute;cutable directement apr&egrave;s la compilation</h3>
+<ol>
+<li>Dans task.json, ajouter une task suppl&eacute;mentaire :
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; , {</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"type"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"shell"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"label"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"gcc&nbsp;build&nbsp;and&nbsp;run&nbsp;active&nbsp;file"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"command"</span><span style="color: #000000;">:&nbsp;</span><span style="color: #a31515;">"${fileDirname}</span><span style="color: #ee0000;">\\</span><span style="color: #a31515;">${fileBasenameNoExtension}.exe"</span><span style="color: #000000;">,</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"dependsOn"</span><span style="color: #000000;">:&nbsp;[</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #a31515;">"gcc&nbsp;build&nbsp;active&nbsp;file"</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0451a5;">"problemMatcher"</span><span style="color: #000000;">:&nbsp;[]</span></div>
+<div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+</li>
+<li><span style="color: #000000;">Pour obtenir finalement </span>
+<ol>
+<li>&nbsp;</li>
+</ol>
+</li>
+</ol>

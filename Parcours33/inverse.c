@@ -13,6 +13,7 @@ int main()
     }
     printf(" \n");
 }
+
 void inverse(int vector[5],int new_vector[5],int length)
 {
     int i;

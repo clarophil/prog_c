@@ -7,20 +7,22 @@ void tri(int v[], int l);
 int main()
 {
     srand(time(NULL));
-    int valeurs[10];
+    const int lg = 4;
+    int valeurs[lg];
     int i;
-    for(i = 0 ; i < 10 ; i++)
+    for(i = 0 ; i < lg ; i++)
     {
        valeurs[i]= rand() % 50;
        printf("Le terme numéro %d de la serie de données est: %d \n", i+1 , *(valeurs+i));
     }
-    tri(valeurs,10);
+    tri(valeurs,lg);
     int f;
-    for(f = 0 ; f < 10 ; f++)
+    for(f = 0 ; f < lg ; f++)
     {
-       printf("Le terme numéro %d de la serie de donnees inversée est: %d \n", f+1, *(valeurs+f));
+       printf("Le terme numéro %d de la serie de donnees triée est: %d \n", f+1, *(valeurs+f));
     }
 }
+
 void swap2(int *a, int *b)
 {
     int c;
@@ -28,6 +30,7 @@ void swap2(int *a, int *b)
     *a = *b;
     *b = c;
 }
+
 void tri(int v[],int l)
 {
     int k;
@@ -36,9 +39,9 @@ void tri(int v[],int l)
     {
         for (p = k ;p < l ; p++)
         {
-            if(*(v+p)<*(v+k))
+            if( *(v+p) < *(v+k) )
             {
-                swap2(&(*(v+k)),&(*(v+p)));
+                swap2( &(*(v+k)) , &(*(v+p)) );
             }
         }
     }

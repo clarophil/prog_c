@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include <locale.h>
 
 int findmin(int a,int b);
 int findmax(int a, int b);
@@ -7,6 +8,7 @@ int findabs(int a, int b, int c);
 
 int main()
 {
+    setlocale(LC_ALL, "");
     int a,b,c;
     printf("Entrer 3 nombres :\n");
     scanf("%d %d %d",&a,&b, &c);

@@ -1,11 +1,14 @@
+#include<stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <locale.h>
 
 void swap(int*a,int*b);
 void tri(int v[], int l);
 
 int main()
 {
+    setlocale(LC_ALL, "");
     srand(time(NULL));
     const int lg = 4;
     int valeurs[lg];

@@ -5,15 +5,15 @@ int minmax(int *vect, int lg,  int *min, int *max);
 int main()
 {
     int vect[3]={5,10,15};;
-    int *min, minval;
-    int *max, maxval;
-    min = &minval;
-    max = &maxval;
+    int *minadr, minval;
+    int *maxadr, maxval;
+    minadr = &minval;
+    maxadr = &maxval;
     int l, lg = 3;
 
-    minmax(vect, lg, min, max);
-    printf("Minimum: %d \n", *min);
-    printf("Maximum :  %d \n", *max);
+    minmax(vect, lg, minadr, maxadr);
+    printf("Minimum: %d %d\n", *minadr, minval);
+    printf("Maximum :  %d %d\n", *maxadr, maxval);
     return 0;
 }
 

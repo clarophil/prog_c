@@ -5,7 +5,7 @@ char convert (int pix);
 
 int main()
 {
-    char *filename = "..//dogo.pgm";
+    char *filename = "Parcours44//dogo.pgm";
 
     FILE *fichier;
     fichier = fopen(filename , "r");
@@ -83,7 +83,7 @@ int main()
 
 
     FILE *chien;
-    chien = fopen ("..//chientext.txt", "w");
+    chien = fopen ("Parcours44//chientext.txt", "w");
     fprintf(chien,vecttxt);
 
 

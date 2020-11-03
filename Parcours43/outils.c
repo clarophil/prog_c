@@ -5,7 +5,7 @@ char convertochar (int pix);
 
 int dog()
 {
-    char *filename = "..//dogo.pgm";
+    char *filename = "dogo.pgm";
 
     FILE *fichier;
     fichier = fopen(filename , "r");
@@ -16,7 +16,7 @@ int dog()
         return(1);
     }
     
-    char *filename2 = "..//image.txt";
+    char *filename2 = "image.txt";
 
     FILE *fichier2;
     fichier2 = fopen(filename2 , "w+");
